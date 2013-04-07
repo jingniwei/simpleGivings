@@ -1,0 +1,23 @@
+CREATE TABLE  `weijc`.`sg_membership` (
+`Id` INT( 6 ) NOT NULL PRIMARY KEY auto_increment,
+`firstname` VARCHAR( 20 ) NOT NULL ,
+`lastname` VARCHAR( 20 ) NOT NULL ,
+`email` VARCHAR( 30 ) NOT NULL ,
+`password` VARCHAR( 30 ) NOT NULL ,
+`time_registered` VARCHAR( 30 ) NOT NULL ,
+`member_type` ENUM(  'educator',  'guardian',  'other' ) NOT NULL
+) 
+
+INSERT INTO sg_membership (name, email, password, time_registered, member_type)
+VALUES ('Jingni Wei', 'Jingniwei@gmail.example', 'ksdljfklsjdlf', now(), educator)
+
+
+//insert in Signup form
+INSERT INTO sg_membership (name, email, password, time_registered, member_type)
+			 VALUES ('$name', '$email', '$password', now(), '$member_type')
+//check email 
+SELECT * FROM `sg_membership` WHERE email = '$email
+
+//edit db
+ALTER TABLE  `sg_membership` ADD  `firstname` VARCHAR( 20 ) NOT NULL ,
+ADD  `lastname` VARCHAR( 20 ) NOT NULL
